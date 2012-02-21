@@ -1,0 +1,341 @@
+<HTML>
+<HEAD>
+<TITLE>选项</TITLE>
+<META content="Microsoft FrontPage 4.0" name=GENERATOR>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<STYLE type=text/css>
+<!--
+A:link {text-decoration:none; color:"#0000ff"}
+A:visited {text-decoration:none}
+A:hover {text-decoration:underline; color:"#FF0033"}
+
+body { font-family:"Verdana", "Arial", "Helvetica", "sans-serif"; font-size: 9pt}
+
+p {  font-family:"Verdana", "Arial", "Helvetica", "sans-serif"; font-size: 9pt}
+
+td {  font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; font-size: 9pt}
+-->
+
+</STYLE>
+</HEAD>
+ <SCRIPT LANGUAGE ="VBSCRIPT">
+  <!-- 
+    Sub Checkdata()
+      If trim(my.T2.Value) = Empty Then
+        Window.Alert "请填写“客户名称”！"
+        my.T2.focus()
+        Exit Sub
+      End If
+      
+       If trim(my.T3.Value) = Empty Then
+        Window.Alert "请填写“地址”！"
+        my.T3.focus()
+        Exit Sub
+      End If
+
+      If trim(my.T4.Value) = Empty Then
+        Window.Alert "请填写“联系电话”！"
+        my.T4.focus()
+        Exit Sub
+      End If
+
+      If trim(my.T6.Value) = Empty Then
+        Window.Alert "请填写“联系人”！"
+        my.T6.focus()
+        Exit Sub
+      End If
+      
+      if instr(1,trim(my.T2.Value),"'")>0 or instr(1,trim(my.T2.Value)," ")>0 then
+          Window.Alert "“客户名称”中不能含有 ' 和 '' ！"
+          my.T1.focus()
+          Exit Sub
+      end if
+     
+       if instr(1,trim(my.T3.Value),"'")>0 or instr(1,trim(my.T3.Value)," ")>0 then
+          Window.Alert "“客户名称”中不能含有 ' 和 '' ！"
+          my.T3.focus()
+          Exit Sub
+      end if
+      
+       if instr(1,trim(my.T4.Value),"'")>0 or instr(1,trim(my.T4.Value)," ")>0 then
+          Window.Alert "“客户名称”中不能含有 ' 和 '' ！"
+          my.T4.focus()
+          Exit Sub
+      end if
+      
+      if trim(my.T5.Value)<>"" then  
+        if instr(1,trim(my.T5.Value),"'")>0 or instr(1,trim(my.T5.Value)," ")>0 then
+          Window.Alert "“客户名称”中不能含有 ' 和 '' ！"
+          my.T5.focus()
+          Exit Sub
+        end if
+      end if  
+      
+       if instr(1,trim(my.T6.Value),"'")>0 or instr(1,trim(my.T6.Value)," ")>0 then
+          Window.Alert "“客户名称”中不能含有 ' 和 '' ！"
+          my.T6.focus()
+          Exit Sub
+      end if
+        
+      my.Submit
+    End Sub
+    
+  -->
+  </SCRIPT>
+  
+<script language="javascript">
+<!--
+function sp(a)
+{
+  var i=1;
+  
+  var k="";
+  
+  for(i=1;i<=a;i++)
+    k=k+" ";
+    
+  return k;  
+}
+
+function checknum(a)
+{ 
+  //window.alert a.length-1
+  
+  for(i=0;i<=a.length-1;i++)
+    {
+      if(((a.substring(i,i+1)>'.')||(a.substring(i,i+1)<'.'))&&((a.substring(i,i+1)>' ')||(a.substring(i,i+1)<' ')))
+       {
+         if((a.substring(i,i+1)<'0')||(a.substring(i,i+1)>'9'))
+            return false;
+       }    
+    }
+    
+  return true;  
+}
+
+function validate_form()
+{
+    var txt;
+    txt=document.my.T2.value;
+    if ((txt=="")||(txt==sp(txt.length)))
+      {
+        alert('“客户名称”不能为空！');
+	    document.my.T2.focus();
+	    return false;
+      }
+    if((txt.indexOf("\"") != -1)||(txt.indexOf("\'") != -1)) 
+      {
+        alert('“客户名称”中不能含有 \' 和 \" ！');
+        document.my.T2.focus();
+	    return false;
+      }
+  
+    txt=document.my.T3.value;
+    if ((txt=="")||(txt==sp(txt.length)))
+      {
+        alert('“地址”不能为空！');
+	    document.my.T3.focus();
+	    return false;
+      }
+    if((txt.indexOf("\"") != -1)||(txt.indexOf("\'") != -1)) 
+      {
+        alert ('“地址”中不能含有 \' 和 \" ！');
+        document.my.T3.focus();
+	    return false;
+      }  
+      
+    txt=document.my.T4.value;
+    if ((txt=="")||(txt==sp(txt.length)))
+      {
+        alert('“联系电话”不能为空！');
+	    document.my.T4.focus();
+	    return false;
+      }
+    if((txt.indexOf("\"") != -1)||(txt.indexOf("\'") != -1)) 
+      {
+        alert ('“联系电话”中不能含有 \' 和 \" ！');
+        document.my.T4.focus();
+	    return false;
+      }      
+
+    txt=document.my.T5.value;
+    if((txt.indexOf("\"") != -1)||(txt.indexOf("\'") != -1)) 
+      {
+        alert ('“传真”中不能含有 \' 和 \" ！"');
+        document.my.T5.focus();
+	    return false;
+      }
+      
+    txt=document.my.T6.value;
+    if ((txt=="")||(txt==sp(txt.length)))
+      {
+        alert('“联系人”不能为空！');
+	    document.my.T6.focus();
+	    return false;
+      }      
+    if((txt.indexOf("\"") != -1)||(txt.indexOf("\'") != -1)) 
+      {
+        alert ('“联系人”中不能含有 \' 和 \" ！');
+        document.my.T6.focus();
+	    return false;
+      }    
+   
+    txt=document.my.T7.value;
+    if ((txt=="")||(txt==sp(txt.length)))
+      {
+        alert('“单价”不能为空！');
+	    document.my.T7.focus();
+	    return false;
+      }      
+    if(!checknum(txt)) 
+      {
+        alert ('“单价”必须为数字 ！');
+        document.my.T7.focus();
+	    return false;
+      }   
+      
+    return true;  
+ }
+-->
+</script>
+
+<BODY background=./image/blackground.gif bgColor=#ffffff>
+<TABLE border=0 cellPadding=0 cellSpacing=0 height=55 width=839>
+  <TR>
+    <TD background=./image/top.gif colSpan=2 rowSpan=2 width=244>
+      　<DIV align=center><b><font face="华文隶书" color="#FFFFFF" size="5"><span style="letter-spacing: 5pt">&nbsp;&nbsp;</span></font></b></DIV>
+	</TD>
+    <TD bgColor=#00b2eb height=1 width=595><IMG height=1 src="./image/pixel.gif" width=1></TD>
+  </TR>
+  <TR>
+    <TD bgColor=#ffffff vAlign=bottom width="595">
+      <DIV align=right>
+      <p align="center">
+      <img border="0" src="image/buttons.gif" width="460" height="40"></p>
+      <TABLE align=right border=0 cellPadding=0 cellSpacing=0 height=32 width=312 vspace="0" hspace="0">
+        <TR>
+          <TD background=./image/button1.gif width=161>
+            <DIV align=center><B><font size="4">选&nbsp; 项</font></B></DIV>                     
+		  </TD> 
+          <TD vAlign=bottom width="147"> 
+              <DIV align=right></DIV> 
+		  </TD> 
+		</TR> 
+	  </TABLE> 
+	  </DIV> 
+	</TD> 
+  </TR> 
+</TABLE> 
+<TABLE border=0 cellPadding=0 cellSpacing=0 width=844 height="322"> 
+  <TR> 
+    <TD height=1 width=248> 
+    <p align="center"></TD> 
+    <TD rowSpan=4 width=8 height="322">　</TD> 
+    <TD height=1 width=587 colspan="3"></TD> 
+  </TR> 
+  <TR> 
+    <TD vAlign=top width=248 height="316" rowspan="3"> 
+      <TABLE align=right border=0 cellPadding=4 cellSpacing=4 height=270 width=141> 
+        <TR bgColor=#29a8cd> 
+          <TD> 
+            <DIV align=center><a href="index.asp?op=reset"><b><font size="2" color="#FFFFFF">重新登录</font></b></a></DIV> 
+		  </TD> 
+		</TR> 
+        <TR bgColor=#2cb1bc> 
+          <TD> 
+            <DIV align=center><b><A href="instore.asp"><font color="#ffffff" size="2"> 
+              进仓管理</font></A></b></DIV> 
+		  </TD> 
+		</TR> 
+        <TR bgColor=#35a8a5> 
+          <TD> 
+            <DIV align=center><b><A href="outstore.asp"><font color="#ffffff" size="2"> 
+              出仓管理</font></A></b></DIV> 
+		  </TD> 
+		</TR> 
+        <TR bgColor=#35a88e> 
+          <TD> 
+            <DIV align=center><b><a href="Client_List.htm"><font color="#ffffff" size="2"> 
+              客户信息</font></a></b></DIV> 
+		  </TD> 
+		</TR> 
+        <TR bgColor=#37a67c> 
+          <TD> 
+            <DIV align=center><b><A href="user.htm"><font color="#ffffff" size="2"> 
+              用户</font><font size="2" color="#FFFFFF">管理</font></A></b></DIV> 
+		  </TD> 
+		</TR> 
+        <TR bgColor=#339966> 
+          <TD> 
+            <DIV align=center><b><A href="jiliang_list.htm"><font color="#ffffff" size="2">选 
+              项</font></A></b></DIV> 
+		  </TD> 
+		</TR> 
+        <TR bgColor=#339966> 
+          <TD> 
+            <p align="center"><A href="report.htm"><font size="2" color="#FFFFFF"><b>报表与计费</b></font></a></TD>     
+		</TR>     
+        <TR bgColor=#339966> 
+          <TD> 
+            <p align="center"><a href="cremain.htm"><font size="2" color="#FFFFFF"><b>结存情况</b></font></a></TD>     
+		</TR>     
+        <TR bgColor=#339966> 
+          <TD> 
+            <p align="center"><A href="recover.htm"><font size="2" color="#FFFFFF"><b>数据恢复</b></font></a></TD>     
+		</TR>     
+        <TR bgColor=#339966> 
+          <TD> 
+            <DIV align=center><b><A href="support.htm"><font color="#ffffff" size="2"> 
+              帮&nbsp; 助</font></A></b></DIV>                                 
+		  </TD>     
+		</TR>     
+        </TABLE>     
+      <P align=right>　</P>
+	</TD>
+    <TD width="203" valign="middle" height="132" align="center"> 
+      <p align="center" style="margin-top: 0; margin-bottom: 0"><a href="jiliang_list.asp"><img border="0" src="image/Crop.gif" width="69" height="72"></a><p align="center" style="margin-top: 0; margin-bottom: 0">&nbsp;            
+      <font size="3"><b>公司信息</b></font><p align="center" style="margin-top: 0; margin-bottom: 0">　<p align="center" style="margin-top: 0; margin-bottom: 0">　</td>
+    <TD width="192" valign="middle" height="132" align="center"> 
+      <p style="margin-top: 0; margin-bottom: 0"> 
+      <font size="3"><b><font color="#000000"><a href="repair.asp"><img border="0" src="image/repair.gif" width="66" height="67"></a></font></b></font>
+      <p style="margin-top: 0; margin-bottom: 0"><font size="3"><b><font color="#000000">数据修复</font></b></font></p>
+      <p style="margin-top: 0; margin-bottom: 0">　</p>
+      <p style="margin-top: 0; margin-bottom: 0">　</p>
+    </td>
+    <TD width="192" valign="middle" height="132" align="center"> 
+      <p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><a href="ReBillNo.asp"><img border="0" src="image/repairBillNo.gif" width="78" height="78"></a></p>
+      <p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="4"><b>单号前缀</b></font>
+      <p style="word-spacing: 0; margin-top: 0; margin-bottom: 0"><font size="4"><b>修 
+      复</b></font>
+      <p>　
+    </td>
+  </tr>
+  <TR> 
+    <TD width="203" valign="middle" height="131" align="center"> 
+    <p style="margin-top: 0; margin-bottom: 0"><a href="IOBrowse.htm"><img border="0" src="image/IOBrowse.gif" width="75" height="75"></a></p>
+    <p style="margin-top: 0; margin-bottom: 0"><font size="3"><b>货物进出</b></font></p>
+    <p style="margin-top: 0; margin-bottom: 0"><font size="3"><b>情况一览表</b></font> 
+      <p>　</td>
+    <TD width="192" valign="middle" height="131" align="center"> 
+    <p style="margin-top: 0; margin-bottom: 0"><a href="DeleteBrowe.htm"><img border="0" src="image/del.gif" width="78" height="74"></a></p>
+    <p style="margin-top: 0; margin-bottom: 0"><font size="3"><b>删除的</b></font></p>
+    <p style="margin-top: 0; margin-bottom: 0"><font size="3"><b>单号列表</b></font></p>
+    </td>
+    <TD width="192" valign="middle" height="131" align="center"> 
+	   <p style="margin-top: 0; margin-bottom: 0"><a href="ZhuangXieFei.htm"><img border="0" src="image/chache.gif" width="78" height="74"></a></p>
+    <p style="margin-top: 0; margin-bottom: 0"><font size="3"><b>装缷费</b></font></p>
+    <p style="margin-top: 0; margin-bottom: 0"><font size="3"><b>计算</b></font></p>
+	
+	
+	
+	
+	
+    </td>
+  </tr>
+  <TR> 
+    <TD width="587" valign="middle" height="53" align="center" colspan="3"> 
+    </td>
+  </tr>
+  </table>
+</body>
+</html>
